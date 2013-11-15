@@ -1,0 +1,18 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+<div id="test_div">
+  hello
+</div>
+
+<%= javascript_tag do %>
+  $('domready', function(){
+    var collection = new SampleCollection();
+
+    collection.fetch({
+      success: function(data){
+        $('#test_div').append(new SampleView(data).render().el);
+      }
+    });
+
+  });
+<% end %>
